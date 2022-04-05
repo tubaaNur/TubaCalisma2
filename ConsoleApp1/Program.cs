@@ -15,6 +15,21 @@ namespace ConsoleApp1
             Console.WriteLine("Başar");
             Console.WriteLine("Özge");
         }
+
+        public string List()
+        {
+
+            List<string> customer = new List<string>();
+            customer.Add("Manisa");
+            customer.Add("Çankırı");
+            customer.Add("Artvin");
+            customer.Add("Van");
+            Console.WriteLine();
+            return customer.ToString();
+          
+        }
+
+
         private static void AgeWrite(int age)
         {
             for (int i = 0; i < 8; i++)
@@ -24,14 +39,18 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
+
             name();
             name();
             Console.Read();
 
             A2 a2 = new A2();
             a2.AgeWrite();
-           
 
+            List<string> list = new List<string>();
+            list.ToList();
+
+           
         }
     }
 }
