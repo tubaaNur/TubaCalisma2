@@ -9,27 +9,59 @@ namespace ConsoleApp1
 {
     class Program
     {
-       static void Main(string[] args)
+        static void Main(string[] args)
         {
-            CustomerManager customer = new CustomerManager();
-            customer.FirstName = "Tuba";
-            customer.LastName = "Yeşiltaş";
-            customer.ID = 3;
-
-            Console.WriteLine("CustomerId: "+customer.ID); 
-            Console.WriteLine("Customer FirstName. "+customer.FirstName); 
-            Console.WriteLine("Customer LastName: "+ customer.LastName);
-            CustomerManager.Add();
+            // PersonManager classı kullanarak ekleme
+            PersonManager manager = new PersonManager();
+            manager.Add(new Student {Adress = "İstanbul"});
             
 
-            ProductManager productManager= new ProductManager();
+            Customer customer = new Customer();
+            customer.Adress = "İstanbul";
+            customer.Email = "yesiltastubanu@gmail.com";
+            customer.CustomerCode = 4;
+            Console.WriteLine("Müşteri Adresi: " + customer.Adress);
+            Console.WriteLine("Müşteri EMail: " + customer.Email);
+            Console.Write("Müşteri Kodu: " + customer.CustomerCode);
+            Console.WriteLine();
+            customer.Add();
+            customer.Update();
+
+
+            //Interface üzerinden nesne oluşturma Örneği
+            IPerson customer2 = new Customer();
+            customer2.Adress = "İstanbul";
+            customer2.Email = "yesiltastubanu@gmail.com";
+            //customer2.CustomerCode = 4; (Interface de tanımladığım özellik değil)
+            Console.WriteLine("Müşteri Adresi: " + customer2.Adress);
+            Console.WriteLine("Müşteri EMail: " + customer2.Email);
+            // Console.Write("Müşteri Kodu: " + customer2.CustomerCode); (Interface de tanımladığım özellik değil)
+            Console.WriteLine();
+            customer2.Add();
+            customer2.Update();
+
+
+            //CLASS İÇİN ÖRNEK
+            CustomerManager customer3 = new CustomerManager();
+            customer3.FirstName = "Tuba";
+            customer3.LastName = "Yeşiltaş";
+            customer3.ID = 3;
+
+            Console.WriteLine("CustomerId: " + customer3.ID);
+            Console.WriteLine("Customer FirstName. " + customer3.FirstName);
+            Console.WriteLine("Customer LastName: " + customer3.LastName);
+            CustomerManager.Add();
+
+
+            ProductManager productManager = new ProductManager();
             productManager.Name = "Bilgisayar";
             productManager.ID = 5;
             productManager.ProductCode = 8432;
-            Console.WriteLine("Product Id:"+ productManager.ID);
-            Console.WriteLine("Product Name: "+productManager.Name);
-            Console.WriteLine("Product Code: " +productManager.ProductCode);
-            //Console.ReadLine();
+            Console.WriteLine("Product Id:" + productManager.ID);
+            Console.WriteLine("Product Name: " + productManager.Name);
+            Console.WriteLine("Product Code: " + productManager.ProductCode);
+
+            Console.ReadLine();//Ekranı durdurur.
         }
     }
 }
