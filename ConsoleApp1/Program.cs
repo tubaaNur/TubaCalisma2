@@ -11,10 +11,27 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //Inheritiance array ile Örneği
+            Schooll[] scholl = new Schooll[2]
+            {
+                new Schooll
+                {
+                    Name="Kurtuluş Ortaokulu"
+                },
+                new Students
+                {
+                    Name ="Başar"
+                }
+            };
+            foreach (var schooll in scholl)
+            {
+                Console.WriteLine(schooll.Name);
+            }
+            //Console.ReadLine();
             // PersonManager classı kullanarak ekleme
             PersonManager manager = new PersonManager();
-            manager.Add(new Student {Adress = "İstanbul"});
-            
+            manager.Add(new Student { Adress = "İstanbul" });
+
 
             Customer customer = new Customer();
             customer.Adress = "İstanbul";

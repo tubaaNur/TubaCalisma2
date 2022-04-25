@@ -7,7 +7,7 @@ using TubaCalisma2;
 
 namespace TubaCalisma2
 {
-     interface IPerson
+    interface IPerson
     {
         void Add();
         void Update();
@@ -33,28 +33,29 @@ namespace TubaCalisma2
 
         }
     }
-        class Student : IPerson
+    class Student : IPerson
+    {
+        public string Email { get; set; }
+        public string Adress { get; set; }
+        public string Bolum { get; set; }
+        public void Add()
         {
-            public string Email { get; set; } 
-            public string Adress { get; set; }
-            public string Bolum { get; set; }
-            public void Add()
-            {
-                Console.WriteLine("Öğrenci eklendi.");
-            }
-
-            public void Update()
-            {
-                Console.WriteLine("Öğrenci güncellendi.");
-            }
+            Console.WriteLine("Öğrenci eklendi.");
         }
 
-        class PersonManager
+        public void Update()
         {
-            public void Add(IPerson person)
-            {
-                Console.WriteLine(person.Adress);            }
+            Console.WriteLine("Öğrenci güncellendi.");
         }
     }
+
+    class PersonManager
+    {
+        public void Add(IPerson person)
+        {
+            Console.WriteLine(person.Adress);
+        }
+    }
+}
 
 

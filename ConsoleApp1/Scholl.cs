@@ -5,13 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using TubaCalisma2;
 
+
 namespace TubaCalisma2
 {
-    class ProductManager
+    class Schooll
     {
-        public int ID { get; set; }
         public string Name { get; set; }
-        public int ProductCode { get; set; }
+        public string Location { get; set; }
 
     }
+    class Students : Schooll
+    {
+        public int SchollNo { get; set; }
+    }
+
 }
