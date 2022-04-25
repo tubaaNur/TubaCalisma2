@@ -11,22 +11,28 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            //Base-override örneği 
+            Schooll scholl = new Schooll();
+            scholl.AddS();
+            Students student = new Students();
+            student.AddS();
+
             //Inheritiance array ile Örneği
-            Schooll[] scholl = new Schooll[2]
-            {
-                new Schooll
-                {
-                    Name="Kurtuluş Ortaokulu"
-                },
-                new Students
-                {
-                    Name ="Başar"
-                }
-            };
-            foreach (var schooll in scholl)
-            {
-                Console.WriteLine(schooll.Name);
-            }
+            //Schooll[] scholl = new Schooll[2]
+            //{
+            //    new Schooll
+            //    {
+            //        Name="Kurtuluş Ortaokulu"
+            //    },
+            //    new Students
+            //    {
+            //        Name ="Başar"
+            //    }
+            //};
+            //foreach (var schooll in scholl)
+            //{
+            //    Console.WriteLine(schooll.Name);
+            //}
             //Console.ReadLine();
             // PersonManager classı kullanarak ekleme
             PersonManager manager = new PersonManager();

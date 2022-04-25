@@ -23,8 +23,7 @@ namespace TubaCalisma2
 
         public void Add()
         {
-
-            Console.WriteLine("Customer Eklendi.");
+            Console.WriteLine("Customer Eklendi."); 
         }
 
         public void Update()

@@ -10,6 +10,11 @@ namespace TubaCalisma2
 {
     class Schooll
     {
+        public virtual void AddS()
+        {
+            Console.WriteLine("Okul Eklendi.");
+        }
+        
         public string Name { get; set; }
         public string Location { get; set; }
 
@@ -17,6 +22,11 @@ namespace TubaCalisma2
     class Students : Schooll
     {
         public int SchollNo { get; set; }
+        public override void AddS()
+        {
+            Console.WriteLine("Öğrenci eklendi.");
+            //base.AddS(); 
+        }
     }
 
 }
