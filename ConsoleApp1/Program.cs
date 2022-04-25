@@ -12,7 +12,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             CustomerManagers customerManagers = new CustomerManagers();
-            customerManagers.Logger = new SQLLogger();//Yeni loglama ihtiyacı duyduğunda sadece new kısmını değiştirirsin.
+            customerManagers.Logger = new SQLLogger();//Yeni loglama ihtiyacı duyduğunda sadece new kısmını değiştirirsin..
             customerManagers.Add();
 
             DataBase data = new SqlServer();

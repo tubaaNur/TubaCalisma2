@@ -17,7 +17,8 @@ namespace TubaCalisma2
         public void Add()
         {
             Logger.Log();
-            Console.WriteLine("Customer Eklendi.");
+            Console.WriteLine("Customer Eklendi..");
+            Console.WriteLine("Customer Eklendi..");
         }
     }
 
@@ -25,7 +26,7 @@ namespace TubaCalisma2
     {
         public void Log()
         {
-            Console.WriteLine("SQL Eklendi.");
+            Console.WriteLine("SQL Eklendi..");
 
         }
 
