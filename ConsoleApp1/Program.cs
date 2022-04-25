@@ -11,6 +11,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            CustomerManagers customerManagers = new CustomerManagers();
+            customerManagers.Logger = new SQLLogger();//Yeni loglama ihtiyacı duyduğunda sadece new kısmını değiştirirsin.
+            customerManagers.Add();
+
+            DataBase data = new SqlServer();
+            data.Delete();
+            data.Update();
+
+            DataBase data2 = new Oracle();
+            data2.Delete();
+            data2.Update();
+            
             //Base-override örneği 
             Schooll scholl = new Schooll();
             scholl.AddS();
@@ -84,7 +96,30 @@ namespace ConsoleApp1
             Console.WriteLine("Product Name: " + productManager.Name);
             Console.WriteLine("Product Code: " + productManager.ProductCode);
 
-            Console.ReadLine();//Ekranı durdurur.
+            Console.ReadLine();//Uygulamayı durdurur.
+        }
+
+        abstract class DataBase
+        {
+            public void Delete()
+            {
+                Console.WriteLine("Silindi.");
+            }
+            public abstract void Update();
+        }
+        class SqlServer : DataBase
+        {
+            public override void Update()
+            {
+                Console.WriteLine("SQL SERVER GÜNCELLENDİ.");
+            }
+        }
+        class Oracle : DataBase
+        {
+            public override void Update()
+            {
+                Console.WriteLine("ORACLE GÜNCELLENDİ.");
+            }
         }
     }
 }
