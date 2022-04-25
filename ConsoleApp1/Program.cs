@@ -1,56 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
 using TubaCalisma2;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        private static void name()
+       static void Main(string[] args)
         {
-            Console.WriteLine("Tuba");
-            Console.WriteLine("Başar");
-            Console.WriteLine("Özge");
-        }
+            CustomerManager customer = new CustomerManager();
+            customer.FirstName = "Tuba";
+            customer.LastName = "Yeşiltaş";
+            customer.ID = 3;
 
-        public string List()
-        {
+            Console.WriteLine("CustomerId: "+customer.ID); 
+            Console.WriteLine("Customer FirstName. "+customer.FirstName); 
+            Console.WriteLine("Customer LastName: "+ customer.LastName);
+            CustomerManager.Add();
+            
 
-            List<string> customer = new List<string>();
-            customer.Add("Manisa");
-            customer.Add("Çankırı");
-            customer.Add("Artvin");
-            customer.Add("Van");
-            Console.WriteLine();
-            return customer.ToString();
-          
-        }
-
-
-        private static void AgeWrite(int age)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                Console.WriteLine(age);
-            }
-        }
-        static void Main(string[] args)
-        {
-
-            name();
-            name();
-            Console.Read();
-
-            A2 a2 = new A2();
-            a2.AgeWrite();
-
-            List<string> list = new List<string>();
-            list.ToList();
-
-           
+            ProductManager productManager= new ProductManager();
+            productManager.Name = "Bilgisayar";
+            productManager.ID = 5;
+            productManager.ProductCode = 8432;
+            Console.WriteLine("Product Id:"+ productManager.ID);
+            Console.WriteLine("Product Name: "+productManager.Name);
+            Console.WriteLine("Product Code: " +productManager.ProductCode);
+            //Console.ReadLine();
         }
     }
 }
