@@ -9,8 +9,13 @@ namespace ConsoleApp1
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+            //Liste çağırma
+            //Students students = new Students();
+            //students.List();
+
             CustomerManagers customerManagers = new CustomerManagers();
             customerManagers.Logger = new SQLLogger();//Yeni loglama ihtiyacı duyduğunda sadece new kısmını değiştirirsin..
             customerManagers.Add();
@@ -22,30 +27,31 @@ namespace ConsoleApp1
             DataBase data2 = new Oracle();
             data2.Delete();
             data2.Update();
-            
+
             //Base-override örneği 
-            Schooll scholl = new Schooll();
-            scholl.AddS();
-            Students student = new Students();
-            student.AddS();
+            //Schooll scholl = new Schooll();
+            //scholl.AddS();
+            //Students student = new Students();
+            //student.AddS();
 
             //Inheritiance array ile Örneği
-            //Schooll[] scholl = new Schooll[2]
-            //{
-            //    new Schooll
-            //    {
-            //        Name="Kurtuluş Ortaokulu"
-            //    },
-            //    new Students
-            //    {
-            //        Name ="Başar"
-            //    }
-            //};
-            //foreach (var schooll in scholl)
-            //{
-            //    Console.WriteLine(schooll.Name);
-            //}
-            //Console.ReadLine();
+            Schooll[] scholl = new Schooll[2]
+            {
+                new Schooll
+                {
+                    Name="Kurtuluş Ortaokulu"
+                },
+                new Students
+                {
+                    Name ="Başar"
+                }
+            };
+            foreach (var schooll in scholl)
+            {
+                Console.WriteLine(schooll.Name);
+            }
+            Console.ReadLine();
+
             // PersonManager classı kullanarak ekleme
             PersonManager manager = new PersonManager();
             manager.Add(new Student { Adress = "İstanbul" });
@@ -67,12 +73,12 @@ namespace ConsoleApp1
             IPerson customer2 = new Customer();
             customer2.Adress = "İstanbul";
             customer2.Email = "yesiltastubanu@gmail.com";
-            //customer2.CustomerCode = 4; (Interface de tanımladığım özellik değil)
+            /*customer2.CustomerCode = 4;*/ // (Interface de tanımladığım özellik değil)
             Console.WriteLine("Müşteri Adresi: " + customer2.Adress);
-            Console.WriteLine("Müşteri EMail: " + customer2.Email);
+            Console.WriteLine("Müşteri EMail: " + customer2.Email+"\n"); 
             // Console.Write("Müşteri Kodu: " + customer2.CustomerCode); (Interface de tanımladığım özellik değil)
-            Console.WriteLine();
-            customer2.Add();
+            //Console.WriteLine();
+            customer2.Add(); 
             customer2.Update();
 
 
@@ -83,6 +89,7 @@ namespace ConsoleApp1
             customer3.ID = 3;
 
             Console.WriteLine("CustomerId: " + customer3.ID);
+            Console.WriteLine($"CustomerId: {customer3.ID}"); 
             Console.WriteLine("Customer FirstName. " + customer3.FirstName);
             Console.WriteLine("Customer LastName: " + customer3.LastName);
             CustomerManager.Add();
@@ -98,7 +105,7 @@ namespace ConsoleApp1
 
             Console.ReadLine();//Uygulamayı durdurur.
         }
-
+       
         abstract class DataBase
         {
             public void Delete()

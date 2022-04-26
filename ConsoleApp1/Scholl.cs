@@ -25,8 +25,17 @@ namespace TubaCalisma2
         public override void AddS()
         {
             Console.WriteLine("Öğrenci eklendi.");
-            //base.AddS(); 
-        }
-    }
+            base.AddS(); 
 
+        }
+        //Parametresiz string döndüren liste 
+        //public string List()
+        //{
+        //    List<string> list = new List<string>();
+        //    list.Add(Name="Başar"); 
+        //    list.Add(Location="Isparta"); 
+        //    return list.ToString();
+        //}
+    }
+    
 }

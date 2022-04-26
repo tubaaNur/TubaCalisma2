@@ -18,7 +18,7 @@ namespace TubaCalisma2
         {
             Logger.Log();
             Console.WriteLine("Customer Eklendi..");
-            Console.WriteLine("Customer Eklendi..");
+            
         }
     }
 
