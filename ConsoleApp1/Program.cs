@@ -12,9 +12,23 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+            // Polymorhism örneği
+            /* a3.List();
+            B a3= new B(); */
+            A a3 = new B();
+            a3.List();
+            Console.WriteLine("Yaşı giriniz: ");
+            Console.ReadLine();
+            Console.WriteLine(a3.Name);
+            Console.WriteLine(a3.Adress);
+
+            /* a3.Name = "Tuba";
+            Console.WriteLine(a3.Name); */
+
+
             //Liste çağırma
-            //Students students = new Students();
-            //students.List();
+            Students students = new Students();
+            students.List();
 
             CustomerManagers customerManagers = new CustomerManagers();
             customerManagers.Logger = new SQLLogger();//Yeni loglama ihtiyacı duyduğunda sadece new kısmını değiştirirsin..
@@ -128,5 +142,11 @@ namespace ConsoleApp1
                 Console.WriteLine("ORACLE GÜNCELLENDİ.");
             }
         }
+
+        
+
+
+
+
     }
 }
