@@ -12,11 +12,46 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+
+            A a3 = new A();
+            //a3.askos("Tuba");
+            //var response =  a3.askos("İrem");
+            //Console.WriteLine("1. Sayı değeri giriniz: ");
+            //int a = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("2. Sayı değeri giriniz: ");
+            //int b = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Sayı değerleri: "+(a)+" "+(b));
+            //a3.toplama(a,b);
+
+            //Console.WriteLine("Dizinin 1. elemanını giriniz: ");
+            //int s1 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Dizinin 2. elemanını giriniz: ");
+            //int s2 = Convert.ToInt32(Console.ReadLine()); 
+            //Console.WriteLine("Dizinin 3. elemanını giriniz: ");
+            //int s3 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Dizi elemanları: " + (s1) + "" + (s2) + "" + (s3));
+            //a3.list(s1,s2,s3);
+
+            //    Console.WriteLine("Metni giriniz: ");
+            //    string a = Convert.ToString(Console.ReadLine());
+            //    a3.buyukdondur(a);
+
+            //    Console.WriteLine("Metni giriniz: ");
+            //    string b = Convert.ToString(Console.ReadLine());
+            //    a3.kucukdondur(b);
+            //}
+
             // Polymorhism örneği
             /* a3.List();
             B a3= new B(); */
-            A a3 = new B();
-            a3.List();
+            A a4 = new B();
+            //a3.List();
+            //bool t = true;
+            //bool f = false;
+
+            a3.askos("irem");
+            a3.askos("Tuba");
+
             Console.WriteLine("Yaşı giriniz: ");
             Console.ReadLine();
             Console.WriteLine(a3.Name);
@@ -47,6 +82,7 @@ namespace ConsoleApp1
             //scholl.AddS();
             //Students student = new Students();
             //student.AddS();
+
 
             //Inheritiance array ile Örneği
             Schooll[] scholl = new Schooll[2]
